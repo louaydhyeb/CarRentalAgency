@@ -9,6 +9,7 @@ target 'CarRental' do
    pod 'GooglePlaces'
    pod 'GooglePlacePicker'
    pod 'GoogleMaps'
+   pod "GooglePlacesSearchController"
    pod 'Alamofire'
    pod 'SwiftyJSON'
    pod 'Kingfisher'

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarRental/RegisterViewController.swift"
-            timestampString = "545702272.30379"
+            timestampString = "545938808.265087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "register(_:)"
             landmarkType = "7">
          </BreakpointContent>

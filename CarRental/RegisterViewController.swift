@@ -8,14 +8,28 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
+import GooglePlaces
+import GooglePlacePicker
+import MapKit
 
-class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    
+class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate , GMSPlacePickerViewControllerDelegate{
+
+    let GoogleSeachPlacesAPIKey = "AIzaSyC1-Kit27V3WUzqUFa6ZsDC8cPZaj6qR2w"
     let URLRegsiter = "http://192.168.254.129/Scripts/v1/upload2.php"
     var photoUrl: URL?
     @IBOutlet weak var nametxt: UITextField!
     @IBOutlet weak var phonetxt: UITextField!
+    
+    @IBAction func pickPlace(_ sender: UIButton) {
+        
+        let config = GMSPlacePickerConfig(viewport: nil)
+        let placePicker = GMSPlacePickerViewController(config: config)
+        placePicker.delegate = self
+        present(placePicker, animated: true, completion: nil)
+        
+    }
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var Email: UITextField!
     @IBOutlet weak var Address: UITextField!
@@ -101,6 +115,22 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         
         self.present(actionSheet, animated: true, completion: nil)
     }
+    func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
+        // Dismiss the place picker, as it cannot dismiss itself.
+        viewController.dismiss(animated: true, completion: nil)
+        
+        print("Place name \(place.name)")
+        Address.text = place.formattedAddress
+        print("Place address \(String(describing: place.formattedAddress))")
+        print("Place attributions \(String(describing: place.attributions))")
+    }
+    
+    func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
+        // Dismiss the place picker, as it cannot dismiss itself.
+        viewController.dismiss(animated: true, completion: nil)
+        
+        print("No place selected")
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if  let imgUrl = info[UIImagePickerControllerImageURL] as? URL{
@@ -123,7 +153,6 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
