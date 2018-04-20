@@ -1,0 +1,6 @@
+framework module Pods_CarRental {
+  umbrella header "Pods-CarRental-umbrella.h"
+
+  export *
+  module * { export * }
+}
