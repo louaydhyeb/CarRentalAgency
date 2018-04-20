@@ -11,16 +11,30 @@ import Alamofire
 import CoreLocation
 import GooglePlaces
 import GooglePlacePicker
+import SwiftValidator
 import MapKit
 
 
-class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate , GMSPlacePickerViewControllerDelegate{
-
-    let GoogleSeachPlacesAPIKey = "AIzaSyC1-Kit27V3WUzqUFa6ZsDC8cPZaj6qR2w"
+class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate , GMSPlacePickerViewControllerDelegate,ValidationDelegate{
+    
+    
+    let validator = Validator()
     let URLRegsiter = "http://192.168.254.129/Scripts/v1/upload2.php"
     var photoUrl: URL?
+    
     @IBOutlet weak var nametxt: UITextField!
     @IBOutlet weak var phonetxt: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var Email: UITextField!
+    @IBOutlet weak var Address: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    @IBOutlet weak var NameErrorLabel: UILabel!
+    @IBOutlet weak var PasswordErrorLabel: UILabel!
+    @IBOutlet weak var PhoneErrorLabel: UILabel!
+    @IBOutlet weak var EmailErrorLabel: UILabel!
+    @IBOutlet weak var AddressErrorLabel: UILabel!
     
     @IBAction func pickPlace(_ sender: UIButton) {
         
@@ -30,71 +44,10 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         present(placePicker, animated: true, completion: nil)
         
     }
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var Email: UITextField!
-    @IBOutlet weak var Address: UITextField!
-    @IBOutlet weak var imageView: UIImageView!
+    
     @IBAction func register(_ sender: Any) {
-        
-        
-        let parameters:Parameters=[
-            //"image":photoUrl,
-            "nameAgence":nametxt.text!,
-            "password":password.text!,
-            "email":Email.text!,
-            "phone":phonetxt.text!,
-            "address":Address.text!,
-            ]
-        
-         // Image to upload:
-        let imageToUploadURL = photoUrl
-        
-           // Server address (replace this with the address of your own server):
-            //let url = "http://localhost:8888/upload_image.php"
-        
-             // Use Alamofire to upload the image
-             Alamofire.upload(
-                    multipartFormData: { multipartFormData in
-                             // On the PHP side you can retrive the image using $_FILES["image"]["tmp_name"]
-                        multipartFormData.append(imageToUploadURL!, withName: "image")
-                           for (key, val) in parameters {
-                            multipartFormData.append((val as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
-                               }
-                },
-                to: URLRegsiter,
-                    encodingCompletion: { encodingResult in
-                        switch encodingResult {
-                        case .success(let upload, _, _):
-                            upload.responseJSON { response in
-                                if let jsonResponse = response.result.value as? [String: Any] {
-                                    print(jsonResponse)
-                                    self.performSegue(withIdentifier: "toLogin", sender: nil)
-                                }
-                            }
-                        case .failure(let encodingError):
-                           print(encodingError)
-                      }
-                }
-                )
-        
-        
-        
-        
-        Alamofire.request(URLRegsiter,method: .post, parameters: parameters ).responseJSON{
-            
-            response in
-            print(response)
-            
-            if let result = response.result.value{
-                
-                let jsonData = result as! NSDictionary
-                
-                print(jsonData.value(forKey:"message")as! String? as Any)
-            }
-        }
-        
-        
-        
+    
+       validator.validate(delegate: self)
     }
     @IBAction func choose(_ sender: UIButton) {
         
@@ -154,6 +107,13 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //validator.registerField(textField: Email, errorLabel: EmailErrorLabel, rules: [RequiredRule(message : "Email is required"), EmailRule(message: "Invalid email")])
+         validator.registerField(textField: password, errorLabel: PasswordErrorLabel, rules: [RequiredRule(message : "Password is required"), PasswordRule()])
+         validator.registerField(textField: nametxt, errorLabel: NameErrorLabel, rules: [RequiredRule(message : "Name is required")])
+        validator.registerField(textField: phonetxt, errorLabel: PhoneErrorLabel, rules: [RequiredRule(message : "Phone is required"), MinLengthRule(length: 8)])
+        validator.registerField(textField: Address, errorLabel: AddressErrorLabel, rules: [RequiredRule(message : "Address is required")])
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -161,7 +121,72 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         // Dispose of any resources that can be recreated.
     }
     
+    func validationSuccessful() {
+        
+        let parameters:Parameters=[
+            //"image":photoUrl,
+            "nameAgence":nametxt.text!,
+            "password":password.text!,
+            "email":Email.text!,
+            "phone":phonetxt.text!,
+            "address":Address.text!,
+            ]
+        
+        // Image to upload:
+        let imageToUploadURL = photoUrl
+        
+        // Server address (replace this with the address of your own server):
+        //let url = "http://localhost:8888/upload_image.php"
+        
+        // Use Alamofire to upload the image
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                // On the PHP side you can retrive the image using $_FILES["image"]["tmp_name"]
+                multipartFormData.append(imageToUploadURL!, withName: "image")
+                for (key, val) in parameters {
+                    multipartFormData.append((val as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+                }
+        },
+            to: URLRegsiter,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        if let jsonResponse = response.result.value as? [String: Any] {
+                            print(jsonResponse)
+                            self.performSegue(withIdentifier: "toLogin", sender: nil)
+                        }
+                    }
+                case .failure(let encodingError):
+                    print(encodingError)
+                }
+        }
+        )
+        Alamofire.request(URLRegsiter,method: .post, parameters: parameters ).responseJSON{
+            
+            response in
+            print(response)
+            
+            if let result = response.result.value{
+                
+                let jsonData = result as! NSDictionary
+                
+                print(jsonData.value(forKey:"message")as! String? as Any)
+            }
+        }
     
+    }
+    
+    func validationFailed(errors: [UITextField : ValidationError]) {
+        for (field, error) in errors {
+            if let field = field as? UITextField {
+                field.layer.borderColor = UIColor.red.cgColor
+                field.layer.borderWidth = 1.0
+            }
+            error.errorLabel?.text = error.errorMessage // works if you added labels
+            error.errorLabel?.isHidden = false
+            error.errorLabel?.textColor = UIColor.red
+        }    }
 
     /*
     // MARK: - Navigation

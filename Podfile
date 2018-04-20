@@ -8,8 +8,8 @@ target 'CarRental' do
   # Pods for CarRental
    pod 'GooglePlaces'
    pod 'GooglePlacePicker'
+   pod 'SwiftValidator'
    pod 'GoogleMaps'
-   pod "GooglePlacesSearchController"
    pod 'Alamofire'
    pod 'SwiftyJSON'
    pod 'Kingfisher'

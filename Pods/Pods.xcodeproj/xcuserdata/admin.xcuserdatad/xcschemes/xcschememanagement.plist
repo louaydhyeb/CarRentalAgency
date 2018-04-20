@@ -11,21 +11,21 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>GooglePlacesSearchController.xcscheme</key>
+		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Kingfisher.xcscheme</key>
+		<key>Pods-CarRental.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Pods-CarRental.xcscheme</key>
+		<key>SwiftValidator.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
