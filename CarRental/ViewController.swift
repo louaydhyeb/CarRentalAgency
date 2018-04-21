@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var usertxt: UITextField!
     @IBOutlet weak var passtxt: UITextField!
     @IBAction func login(_ sender: UIButton) {
+        doLogin()
+    }
+    func doLogin(){
         let parameters:Parameters=[
             "name":usertxt.text!,
             "password":passtxt.text!,
@@ -27,18 +30,20 @@ class ViewController: UIViewController {
                 let json = JSON(value)
                 if json["error"] == false{
                     print("logged in")
+                    let id = String(describing: json["idagence"])
                     let a = String(describing: json["name"])
-                     let b = String(describing: json["phone"])
-                     let c = String(describing: json["email"])
-                     let d = String(describing: json["photo"])
-                     let e = String(describing: json["address"])
+                    let b = String(describing: json["phone"])
+                    let c = String(describing: json["email"])
+                    let d = String(describing: json["photo"])
+                    let e = String(describing: json["address"])
                     
                     var defaults = UserDefaults.standard
                     defaults.set(a,     forKey: "name")
-                    defaults.set(b,                forKey: "phone")
-                    defaults.set(c,         forKey: "email")
-                    defaults.set(d,       forKey: "photo")
-                    defaults.set(e,       forKey: "address")
+                    defaults.set(b,     forKey: "phone")
+                    defaults.set(c,     forKey: "email")
+                    defaults.set(d,     forKey: "photo")
+                    defaults.set(e,     forKey: "address")
+                    defaults.set(e,     forKey: "idagence")
                     
                     defaults.synchronize()
                     
@@ -65,15 +70,26 @@ class ViewController: UIViewController {
             }
         }
         
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "aaaaa.jpeg")!)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        let preferences = UserDefaults.standard
+        
+        if(preferences.string(forKey: "name") != nil)
+        {
+            self.performSegue(withIdentifier: "toMenu", sender: nil)
+            print("T3adit")
+        }
     }
 
 

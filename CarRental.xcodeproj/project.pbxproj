@@ -18,6 +18,7 @@
 		84B25D7F20852CDC00CDE8C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B25D7E20852CDC00CDE8C5 /* Assets.xcassets */; };
 		84B25D8220852CDC00CDE8C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B25D8020852CDC00CDE8C5 /* LaunchScreen.storyboard */; };
 		84B25D8A2085416800CDE8C5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B25D892085416800CDE8C5 /* RegisterViewController.swift */; };
+		84C66C0F208A7C4800AE229F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C66C0E208A7C4700AE229F /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		84B25D8120852CDC00CDE8C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84B25D8320852CDC00CDE8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B25D892085416800CDE8C5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		84C66C0E208A7C4700AE229F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E1B8B4041BB819671E9309FB /* Pods-CarRental.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRental.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarRental/Pods-CarRental.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 				84A68A1A2086B0F30056BDD9 /* Agence.swift */,
 				84A68A1E2086B6280056BDD9 /* TabViewController.swift */,
 				8404ECB22086C59B00C21A6A /* ProfilViewController.swift */,
+				84C66C0E208A7C4700AE229F /* MapViewController.swift */,
 			);
 			path = CarRental;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				84B25D7520852CDB00CDE8C5 /* AppDelegate.swift in Sources */,
 				84A68A1B2086B0F30056BDD9 /* Agence.swift in Sources */,
 				84B25D8A2085416800CDE8C5 /* RegisterViewController.swift in Sources */,
+				84C66C0F208A7C4800AE229F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

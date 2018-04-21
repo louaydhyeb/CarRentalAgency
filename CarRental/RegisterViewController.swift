@@ -29,6 +29,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var Address: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var txtLong: UILabel!
+    @IBOutlet weak var txtLat: UILabel!
     
     @IBOutlet weak var NameErrorLabel: UILabel!
     @IBOutlet weak var PasswordErrorLabel: UILabel!
@@ -74,6 +76,9 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         
         print("Place name \(place.name)")
         Address.text = place.formattedAddress
+        txtLong.text = String(describing:place.coordinate.longitude)
+        txtLat.text = String(describing:place.coordinate.latitude)
+        print("Place Longitude : ",place.coordinate.longitude)
         print("Place address \(String(describing: place.formattedAddress))")
         print("Place attributions \(String(describing: place.attributions))")
     }
@@ -113,6 +118,12 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
          validator.registerField(textField: nametxt, errorLabel: NameErrorLabel, rules: [RequiredRule(message : "Name is required")])
         validator.registerField(textField: phonetxt, errorLabel: PhoneErrorLabel, rules: [RequiredRule(message : "Phone is required"), MinLengthRule(length: 8)])
         validator.registerField(textField: Address, errorLabel: AddressErrorLabel, rules: [RequiredRule(message : "Address is required")])
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "aaaaa.jpeg")!)
+        imageView.layer.borderWidth = 1
+        imageView.layer.masksToBounds = false
+        imageView.layer.borderColor = UIColor.black.cgColor
+        imageView.layer.cornerRadius = imageView.frame.height/2
+        imageView.clipsToBounds = true
         
     }
     
@@ -130,6 +141,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
             "email":Email.text!,
             "phone":phonetxt.text!,
             "address":Address.text!,
+            "lon":txtLong.text!,
+            "lat":txtLat.text!
             ]
         
         // Image to upload:
@@ -139,41 +152,51 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         //let url = "http://localhost:8888/upload_image.php"
         
         // Use Alamofire to upload the image
-        Alamofire.upload(
-            multipartFormData: { multipartFormData in
-                // On the PHP side you can retrive the image using $_FILES["image"]["tmp_name"]
-                multipartFormData.append(imageToUploadURL!, withName: "image")
-                for (key, val) in parameters {
-                    multipartFormData.append((val as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
-                }
-        },
-            to: URLRegsiter,
-            encodingCompletion: { encodingResult in
-                switch encodingResult {
-                case .success(let upload, _, _):
-                    upload.responseJSON { response in
-                        if let jsonResponse = response.result.value as? [String: Any] {
-                            print(jsonResponse)
-                            self.performSegue(withIdentifier: "toLogin", sender: nil)
-                        }
+        if imageToUploadURL != nil {
+            Alamofire.upload(
+                multipartFormData: { multipartFormData in
+                    // On the PHP side you can retrive the image using $_FILES["image"]["tmp_name"]
+                    multipartFormData.append(imageToUploadURL!, withName: "image")
+                    for (key, val) in parameters {
+                        multipartFormData.append((val as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
                     }
-                case .failure(let encodingError):
-                    print(encodingError)
+            },
+                to: URLRegsiter,
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .success(let upload, _, _):
+                        upload.responseJSON { response in
+                            if let jsonResponse = response.result.value as? [String: Any] {
+                                print(jsonResponse)
+                                self.performSegue(withIdentifier: "toLogin", sender: nil)
+                            }
+                        }
+                    case .failure(let encodingError):
+                        print(encodingError)
+                    }
+            }
+            )
+            Alamofire.request(URLRegsiter,method: .post, parameters: parameters ).responseJSON{
+                
+                response in
+                print(response)
+                
+                if let result = response.result.value{
+                    
+                    let jsonData = result as! NSDictionary
+                    
+                    print(jsonData.value(forKey:"message")as! String? as Any)
                 }
-        }
-        )
-        Alamofire.request(URLRegsiter,method: .post, parameters: parameters ).responseJSON{
-            
-            response in
-            print(response)
-            
-            if let result = response.result.value{
-                
-                let jsonData = result as! NSDictionary
-                
-                print(jsonData.value(forKey:"message")as! String? as Any)
             }
         }
+        else{
+            let message = "Please Upload your picture "
+            let alert = UIAlertController(title: "Wrong", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        
     
     }
     

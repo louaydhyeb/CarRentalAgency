@@ -15,15 +15,21 @@ class ProfilViewController: UIViewController {
     @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var lblAdress: UILabel!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
         lblName.text = UserDefaults.standard.string(forKey: "name") as? String
         lblPhone.text = UserDefaults.standard.string(forKey: "phone") as? String
         lblEmail.text = UserDefaults.standard.string(forKey: "email") as? String
         lblAdress.text = UserDefaults.standard.string(forKey: "address") as? String
         let url = URL(string: (UserDefaults.standard.string(forKey: "photo") as? String)! )
         profilPic.kf.setImage(with: url)
+        
+        self.profilPic.layer.cornerRadius = 10.0
+        self.profilPic.clipsToBounds = true;
+        self.profilPic.layer.borderWidth = 3.0
+        self.profilPic.layer.borderColor = UIColor.black.cgColor
         // Do any additional setup after loading the view.
     }
 
