@@ -19,6 +19,9 @@
 		84B25D8220852CDC00CDE8C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B25D8020852CDC00CDE8C5 /* LaunchScreen.storyboard */; };
 		84B25D8A2085416800CDE8C5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B25D892085416800CDE8C5 /* RegisterViewController.swift */; };
 		84C66C0F208A7C4800AE229F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C66C0E208A7C4700AE229F /* MapViewController.swift */; };
+		84FD300D208D1823007CA972 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD3009208D1822007CA972 /* Palette.swift */; };
+		84FD300E208D1823007CA972 /* TwicketSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD300A208D1822007CA972 /* TwicketSegmentedControl.swift */; };
+		84FD300F208D1823007CA972 /* UIViewShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD300B208D1822007CA972 /* UIViewShadowExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		84B25D8320852CDC00CDE8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B25D892085416800CDE8C5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		84C66C0E208A7C4700AE229F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		84FD3009208D1822007CA972 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Palette.swift; path = "../../../../../Downloads/TwicketSegmentedControl-master/TwicketSegmentedControl/Palette.swift"; sourceTree = "<group>"; };
+		84FD300A208D1822007CA972 /* TwicketSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwicketSegmentedControl.swift; path = "../../../../../Downloads/TwicketSegmentedControl-master/TwicketSegmentedControl/TwicketSegmentedControl.swift"; sourceTree = "<group>"; };
+		84FD300B208D1822007CA972 /* UIViewShadowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewShadowExtension.swift; path = "../../../../../Downloads/TwicketSegmentedControl-master/TwicketSegmentedControl/UIViewShadowExtension.swift"; sourceTree = "<group>"; };
+		84FD300C208D1823007CA972 /* TwicketSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwicketSegmentedControl.h; path = "../../../../../Downloads/TwicketSegmentedControl-master/TwicketSegmentedControl/TwicketSegmentedControl.h"; sourceTree = "<group>"; };
 		E1B8B4041BB819671E9309FB /* Pods-CarRental.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRental.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarRental/Pods-CarRental.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +89,7 @@
 		84B25D7320852CDB00CDE8C5 /* CarRental */ = {
 			isa = PBXGroup;
 			children = (
+				84FD3008208D17F2007CA972 /* Custom Segment */,
 				84B25D7420852CDB00CDE8C5 /* AppDelegate.swift */,
 				84B25D7620852CDC00CDE8C5 /* ViewController.swift */,
 				84B25D7820852CDC00CDE8C5 /* Main.storyboard */,
@@ -96,6 +104,17 @@
 				84C66C0E208A7C4700AE229F /* MapViewController.swift */,
 			);
 			path = CarRental;
+			sourceTree = "<group>";
+		};
+		84FD3008208D17F2007CA972 /* Custom Segment */ = {
+			isa = PBXGroup;
+			children = (
+				84FD3009208D1822007CA972 /* Palette.swift */,
+				84FD300C208D1823007CA972 /* TwicketSegmentedControl.h */,
+				84FD300A208D1822007CA972 /* TwicketSegmentedControl.swift */,
+				84FD300B208D1822007CA972 /* UIViewShadowExtension.swift */,
+			);
+			path = "Custom Segment";
 			sourceTree = "<group>";
 		};
 		B1AE93C295FB374928206167 /* Frameworks */ = {
@@ -251,6 +270,9 @@
 				84A68A1F2086B6280056BDD9 /* TabViewController.swift in Sources */,
 				84B25D7D20852CDC00CDE8C5 /* CarRental.xcdatamodeld in Sources */,
 				8404ECB32086C59B00C21A6A /* ProfilViewController.swift in Sources */,
+				84FD300F208D1823007CA972 /* UIViewShadowExtension.swift in Sources */,
+				84FD300D208D1823007CA972 /* Palette.swift in Sources */,
+				84FD300E208D1823007CA972 /* TwicketSegmentedControl.swift in Sources */,
 				84B25D7720852CDC00CDE8C5 /* ViewController.swift in Sources */,
 				84B25D7520852CDB00CDE8C5 /* AppDelegate.swift in Sources */,
 				84A68A1B2086B0F30056BDD9 /* Agence.swift in Sources */,
