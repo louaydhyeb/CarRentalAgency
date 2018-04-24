@@ -13,4 +13,5 @@ target 'CarRental' do
    pod 'Alamofire'
    pod 'SwiftyJSON'
    pod 'Kingfisher'
+   pod 'AlamofireImage'
 end

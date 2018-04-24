@@ -43,7 +43,7 @@ class ViewController: UIViewController {
                     defaults.set(c,     forKey: "email")
                     defaults.set(d,     forKey: "photo")
                     defaults.set(e,     forKey: "address")
-                    defaults.set(e,     forKey: "idagence")
+                    defaults.set(id,     forKey: "idagence")
                     
                     defaults.synchronize()
                     

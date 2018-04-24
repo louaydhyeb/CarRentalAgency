@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7A9B9DE45966A0D737635D42 /* Pods_CarRental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26522A659F634175528B4CFC /* Pods_CarRental.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8404ECB32086C59B00C21A6A /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404ECB22086C59B00C21A6A /* ProfilViewController.swift */; };
+		84381C21208EC7BB00640E08 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84381C20208EC7BB00640E08 /* Feedback.swift */; };
+		84381C23208EC8F900640E08 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84381C22208EC8F900640E08 /* ViewControllerTableViewCell.swift */; };
 		84A68A1B2086B0F30056BDD9 /* Agence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A68A1A2086B0F30056BDD9 /* Agence.swift */; };
 		84A68A1F2086B6280056BDD9 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A68A1E2086B6280056BDD9 /* TabViewController.swift */; };
 		84B25D7520852CDB00CDE8C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B25D7420852CDB00CDE8C5 /* AppDelegate.swift */; };
@@ -28,6 +30,8 @@
 		26522A659F634175528B4CFC /* Pods_CarRental.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarRental.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9F80B4CC814B68FB1F730D /* Pods-CarRental.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRental.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarRental/Pods-CarRental.release.xcconfig"; sourceTree = "<group>"; };
 		8404ECB22086C59B00C21A6A /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
+		84381C20208EC7BB00640E08 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		84381C22208EC8F900640E08 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		84A68A1A2086B0F30056BDD9 /* Agence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agence.swift; sourceTree = "<group>"; };
 		84A68A1E2086B6280056BDD9 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		84B25D7120852CDB00CDE8C5 /* CarRental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRental.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +106,8 @@
 				84A68A1E2086B6280056BDD9 /* TabViewController.swift */,
 				8404ECB22086C59B00C21A6A /* ProfilViewController.swift */,
 				84C66C0E208A7C4700AE229F /* MapViewController.swift */,
+				84381C20208EC7BB00640E08 /* Feedback.swift */,
+				84381C22208EC8F900640E08 /* ViewControllerTableViewCell.swift */,
 			);
 			path = CarRental;
 			sourceTree = "<group>";
@@ -204,6 +210,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CarRental/Pods-CarRental-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -211,6 +218,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftValidator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -269,12 +277,14 @@
 			files = (
 				84A68A1F2086B6280056BDD9 /* TabViewController.swift in Sources */,
 				84B25D7D20852CDC00CDE8C5 /* CarRental.xcdatamodeld in Sources */,
+				84381C21208EC7BB00640E08 /* Feedback.swift in Sources */,
 				8404ECB32086C59B00C21A6A /* ProfilViewController.swift in Sources */,
 				84FD300F208D1823007CA972 /* UIViewShadowExtension.swift in Sources */,
 				84FD300D208D1823007CA972 /* Palette.swift in Sources */,
 				84FD300E208D1823007CA972 /* TwicketSegmentedControl.swift in Sources */,
 				84B25D7720852CDC00CDE8C5 /* ViewController.swift in Sources */,
 				84B25D7520852CDB00CDE8C5 /* AppDelegate.swift in Sources */,
+				84381C23208EC8F900640E08 /* ViewControllerTableViewCell.swift in Sources */,
 				84A68A1B2086B0F30056BDD9 /* Agence.swift in Sources */,
 				84B25D8A2085416800CDE8C5 /* RegisterViewController.swift in Sources */,
 				84C66C0F208A7C4800AE229F /* MapViewController.swift in Sources */,
