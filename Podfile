@@ -13,5 +13,7 @@ target 'CarRental' do
    pod 'Alamofire'
    pod 'SwiftyJSON'
    pod 'Kingfisher'
+   pod 'Firebase/Core'
+   pod 'Firebase/Messaging'
    pod 'AlamofireImage'
 end

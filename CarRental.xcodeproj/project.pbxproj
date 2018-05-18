@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54F3101020AE81E00054B1D9 /* UIViewShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3100C20AE81E00054B1D9 /* UIViewShadowExtension.swift */; };
+		54F3101120AE81E00054B1D9 /* TwicketSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3100D20AE81E00054B1D9 /* TwicketSegmentedControl.swift */; };
+		54F3101220AE81E00054B1D9 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F3100E20AE81E00054B1D9 /* Palette.swift */; };
 		7A9B9DE45966A0D737635D42 /* Pods_CarRental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26522A659F634175528B4CFC /* Pods_CarRental.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8404ECB32086C59B00C21A6A /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404ECB22086C59B00C21A6A /* ProfilViewController.swift */; };
+		8406926920AE6EDE008E8FF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8406926820AE6EDE008E8FF4 /* GoogleService-Info.plist */; };
 		84381C21208EC7BB00640E08 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84381C20208EC7BB00640E08 /* Feedback.swift */; };
 		84381C23208EC8F900640E08 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84381C22208EC8F900640E08 /* ViewControllerTableViewCell.swift */; };
 		84A68A1B2086B0F30056BDD9 /* Agence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A68A1A2086B0F30056BDD9 /* Agence.swift */; };
@@ -21,15 +25,18 @@
 		84B25D8220852CDC00CDE8C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B25D8020852CDC00CDE8C5 /* LaunchScreen.storyboard */; };
 		84B25D8A2085416800CDE8C5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B25D892085416800CDE8C5 /* RegisterViewController.swift */; };
 		84C66C0F208A7C4800AE229F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C66C0E208A7C4700AE229F /* MapViewController.swift */; };
-		84FD300D208D1823007CA972 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD3009208D1822007CA972 /* Palette.swift */; };
-		84FD300E208D1823007CA972 /* TwicketSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD300A208D1822007CA972 /* TwicketSegmentedControl.swift */; };
-		84FD300F208D1823007CA972 /* UIViewShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD300B208D1822007CA972 /* UIViewShadowExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		26522A659F634175528B4CFC /* Pods_CarRental.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarRental.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5421C33720AE896400A5DAE5 /* CarRental.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarRental.entitlements; sourceTree = "<group>"; };
+		54F3100C20AE81E00054B1D9 /* UIViewShadowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewShadowExtension.swift; sourceTree = "<group>"; };
+		54F3100D20AE81E00054B1D9 /* TwicketSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwicketSegmentedControl.swift; sourceTree = "<group>"; };
+		54F3100E20AE81E00054B1D9 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		54F3100F20AE81E00054B1D9 /* TwicketSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwicketSegmentedControl.h; sourceTree = "<group>"; };
 		5C9F80B4CC814B68FB1F730D /* Pods-CarRental.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRental.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarRental/Pods-CarRental.release.xcconfig"; sourceTree = "<group>"; };
 		8404ECB22086C59B00C21A6A /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
+		8406926820AE6EDE008E8FF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Volumes/ESD-ISO/Xcode/1/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84381C20208EC7BB00640E08 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		84381C22208EC8F900640E08 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		84A68A1A2086B0F30056BDD9 /* Agence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agence.swift; sourceTree = "<group>"; };
@@ -44,10 +51,6 @@
 		84B25D8320852CDC00CDE8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B25D892085416800CDE8C5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		84C66C0E208A7C4700AE229F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		84FD3009208D1822007CA972 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Palette.swift; path = "../../../../../Downloads/TwicketSegmentedControl-master/TwicketSegmentedControl/Palette.swift"; sourceTree = "<group>"; };
-		84FD300A208D1822007CA972 /* TwicketSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwicketSegmentedControl.swift; path = "../../../../../Downloads/TwicketSegmentedControl-master/TwicketSegmentedControl/TwicketSegmentedControl.swift"; sourceTree = "<group>"; };
-		84FD300B208D1822007CA972 /* UIViewShadowExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewShadowExtension.swift; path = "../../../../../Downloads/TwicketSegmentedControl-master/TwicketSegmentedControl/UIViewShadowExtension.swift"; sourceTree = "<group>"; };
-		84FD300C208D1823007CA972 /* TwicketSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwicketSegmentedControl.h; path = "../../../../../Downloads/TwicketSegmentedControl-master/TwicketSegmentedControl/TwicketSegmentedControl.h"; sourceTree = "<group>"; };
 		E1B8B4041BB819671E9309FB /* Pods-CarRental.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarRental.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarRental/Pods-CarRental.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,8 +96,10 @@
 		84B25D7320852CDB00CDE8C5 /* CarRental */ = {
 			isa = PBXGroup;
 			children = (
+				5421C33720AE896400A5DAE5 /* CarRental.entitlements */,
 				84FD3008208D17F2007CA972 /* Custom Segment */,
 				84B25D7420852CDB00CDE8C5 /* AppDelegate.swift */,
+				8406926820AE6EDE008E8FF4 /* GoogleService-Info.plist */,
 				84B25D7620852CDC00CDE8C5 /* ViewController.swift */,
 				84B25D7820852CDC00CDE8C5 /* Main.storyboard */,
 				84B25D7E20852CDC00CDE8C5 /* Assets.xcassets */,
@@ -115,10 +120,10 @@
 		84FD3008208D17F2007CA972 /* Custom Segment */ = {
 			isa = PBXGroup;
 			children = (
-				84FD3009208D1822007CA972 /* Palette.swift */,
-				84FD300C208D1823007CA972 /* TwicketSegmentedControl.h */,
-				84FD300A208D1822007CA972 /* TwicketSegmentedControl.swift */,
-				84FD300B208D1822007CA972 /* UIViewShadowExtension.swift */,
+				54F3100E20AE81E00054B1D9 /* Palette.swift */,
+				54F3100F20AE81E00054B1D9 /* TwicketSegmentedControl.h */,
+				54F3100D20AE81E00054B1D9 /* TwicketSegmentedControl.swift */,
+				54F3100C20AE81E00054B1D9 /* UIViewShadowExtension.swift */,
 			);
 			path = "Custom Segment";
 			sourceTree = "<group>";
@@ -167,6 +172,11 @@
 					84B25D7020852CDB00CDE8C5 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -194,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B25D8220852CDC00CDE8C5 /* LaunchScreen.storyboard in Resources */,
+				8406926920AE6EDE008E8FF4 /* GoogleService-Info.plist in Resources */,
 				84B25D7F20852CDC00CDE8C5 /* Assets.xcassets in Resources */,
 				84B25D7A20852CDC00CDE8C5 /* Main.storyboard in Resources */,
 			);
@@ -211,17 +222,23 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CarRental/Pods-CarRental-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftValidator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -278,13 +295,13 @@
 				84A68A1F2086B6280056BDD9 /* TabViewController.swift in Sources */,
 				84B25D7D20852CDC00CDE8C5 /* CarRental.xcdatamodeld in Sources */,
 				84381C21208EC7BB00640E08 /* Feedback.swift in Sources */,
+				54F3101020AE81E00054B1D9 /* UIViewShadowExtension.swift in Sources */,
 				8404ECB32086C59B00C21A6A /* ProfilViewController.swift in Sources */,
-				84FD300F208D1823007CA972 /* UIViewShadowExtension.swift in Sources */,
-				84FD300D208D1823007CA972 /* Palette.swift in Sources */,
-				84FD300E208D1823007CA972 /* TwicketSegmentedControl.swift in Sources */,
 				84B25D7720852CDC00CDE8C5 /* ViewController.swift in Sources */,
+				54F3101220AE81E00054B1D9 /* Palette.swift in Sources */,
 				84B25D7520852CDB00CDE8C5 /* AppDelegate.swift in Sources */,
 				84381C23208EC8F900640E08 /* ViewControllerTableViewCell.swift in Sources */,
+				54F3101120AE81E00054B1D9 /* TwicketSegmentedControl.swift in Sources */,
 				84A68A1B2086B0F30056BDD9 /* Agence.swift in Sources */,
 				84B25D8A2085416800CDE8C5 /* RegisterViewController.swift in Sources */,
 				84C66C0F208A7C4800AE229F /* MapViewController.swift in Sources */,
@@ -425,7 +442,9 @@
 			baseConfigurationReference = E1B8B4041BB819671E9309FB /* Pods-CarRental.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CarRental/CarRental.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CarRental/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.CarRental;
@@ -440,7 +459,9 @@
 			baseConfigurationReference = 5C9F80B4CC814B68FB1F730D /* Pods-CarRental.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CarRental/CarRental.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CarRental/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.CarRental;

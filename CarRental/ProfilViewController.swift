@@ -41,7 +41,7 @@ class ProfilViewController: UIViewController, TwicketSegmentedControlDelegate , 
     @IBOutlet weak var RateView: UIView!
     
     @IBOutlet weak var segmentedControl: TwicketSegmentedControl!
-    let titles = ["Comments","Rate"]
+    let titles = ["Comments"]
     let a = ["Comments","Rate","Comments","Louay","Comments","Marwen","Comments","Rate","Ali","Rate","Comments","Rate","Khlaed","Ya RAbi"]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feedbacks.count
@@ -57,9 +57,10 @@ class ProfilViewController: UIViewController, TwicketSegmentedControlDelegate , 
         //displaying values
         cell.feedbacklbl.text = feedback.feedback
         
+        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
         cell.imgUser.layer.borderWidth = 1
         cell.imgUser.layer.masksToBounds = false
-        cell.imgUser.layer.borderColor = UIColor.black.cgColor
+        cell.imgUser.layer.borderColor = UIColor.white.cgColor
         cell.imgUser.layer.cornerRadius = cell.imgUser.frame.height/2
         cell.imgUser.clipsToBounds = true
         //displaying image
@@ -80,8 +81,10 @@ class ProfilViewController: UIViewController, TwicketSegmentedControlDelegate , 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        lblName.font = UIFont.boldSystemFont(ofSize: 16.0)
-        lblEmail.font = UIFont.boldSystemFont(ofSize: 16.0)
+        
+        
+        
+      
         lblName.text = UserDefaults.standard.string(forKey: "name") as? String
         lblPhone.text = UserDefaults.standard.string(forKey: "phone") as? String
         lblEmail.text = UserDefaults.standard.string(forKey: "email") as? String
@@ -91,8 +94,8 @@ class ProfilViewController: UIViewController, TwicketSegmentedControlDelegate , 
         
         profilPic.layer.borderWidth = 1
         profilPic.layer.masksToBounds = false
-        profilPic.layer.borderColor = UIColor.black.cgColor
-        profilPic.layer.cornerRadius = profilPic.frame.height/2
+        profilPic.layer.borderColor = UIColor.white.cgColor
+        profilPic.layer.cornerRadius = 8.0
         profilPic.clipsToBounds = true
         segmentedControl.setSegmentItems(titles)
         segmentedControl.delegate = self

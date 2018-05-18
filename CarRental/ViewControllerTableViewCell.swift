@@ -11,6 +11,7 @@ import UIKit
 class ViewControllerTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var feedbacklbl: UILabel!
     
